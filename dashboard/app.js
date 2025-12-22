@@ -55,6 +55,13 @@ function listenForData() {
     });
 }
 
+const EMPLOYEES = {
+    "A1 B2 C3 D4": "Rafael (Gerente)",
+    "E5 F6 G7": "Funcionário Exemplo 1",
+    "99 88 77": "Funcionário Exemplo 2",
+    "TESTE_SISTEMA": "Teste Automático"
+};
+
 // UI Functions
 function addLogRow(data) {
     const tbody = document.getElementById('logTableBody');
@@ -65,13 +72,17 @@ function addLogRow(data) {
     tr.className = 'new-row';
     
     // Determine status style
-    const isSuccess = data.status === "Sucesso";
+    const isSuccess = data.status_uso === "Sucesso";
     const statusClass = isSuccess ? 'success' : 'error';
     
+    // Map ID to Name
+    const name = EMPLOYEES[data.id_funcionario] || data.id_funcionario;
+    const displayName = EMPLOYEES[data.id_funcionario] ? `<b>${name}</b> <small>(${data.id_funcionario})</small>` : `<code>${data.id_funcionario}</code>`;
+
     tr.innerHTML = `
         <td>${data.horario || new Date().toLocaleTimeString()}</td>
-        <td><code>${data.id_funcionario}</code></td>
-        <td><span class="status-badge ${statusClass}">${data.status}</span></td>
+        <td>${displayName}</td>
+        <td><span class="status-badge ${statusClass}">${data.status_uso}</span></td>
         <td>${isSuccess ? 'Dispensação Liberada' : 'Tempo esgotado (Sem mão)'}</td>
     `;
     
@@ -88,7 +99,7 @@ let alertCount = 0;
 
 function updateStats(data) {
     // Update counters
-    if (data.status === "Sucesso") {
+    if (data.status_uso === "Sucesso") {
         dailyCount++;
         document.getElementById('todayCount').textContent = dailyCount;
     } else {
@@ -102,6 +113,12 @@ function updateStats(data) {
 
 // Simulation for Demo purposes (Preview without Hardware)
 function simulateData() {
+    // SECURITY: Ensure we NEVER run simulation if the API Key is real.
+    if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
+        console.warn("Simulation blocked: Real API Key detected.");
+        return; 
+    }
+
     console.log("Starting Simulation Mode...");
     const mockIds = ["A1 B2 C3", "E5 F6 G7", "99 88 77"];
     
@@ -109,7 +126,7 @@ function simulateData() {
         const isSuccess = Math.random() > 0.2;
         const mockData = {
             id_funcionario: mockIds[Math.floor(Math.random() * mockIds.length)],
-            status: isSuccess ? "Sucesso" : "Timeout",
+            status_uso: isSuccess ? "Sucesso" : "Timeout",
             horario: new Date().toLocaleString('pt-BR')
         };
         addLogRow(mockData);
