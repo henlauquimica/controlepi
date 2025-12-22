@@ -89,7 +89,12 @@ Este projeto utiliza o **PlatformIO** para gerenciamento de dependências e comp
     *   **Build**: Para compilar.
     *   **Upload**: Para gravar no ESP32.
 
+6.  Visualize o Dashboard:
+    *   **Localmente**: Abra o arquivo `dashboard/index.html` no seu navegador.
+    *   **Online**: Após configurar o Firebase, acesse a URL gerada pelo comando `firebase deploy`.
+
 ---
 
 ## 📄 Licença
 Desenvolvido para **Henlau Química**. Todos os direitos reservados.
+
