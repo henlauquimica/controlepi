@@ -1,0 +1,91 @@
+[debug] [2025-12-22T17:12:31.035Z] ----------------------------------------------------------------------
+[debug] [2025-12-22T17:12:31.040Z] Command:       /opt/homebrew/Cellar/node/25.2.1/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2025-12-22T17:12:31.040Z] CLI Version:   15.1.0
+[debug] [2025-12-22T17:12:31.041Z] Platform:      darwin
+[debug] [2025-12-22T17:12:31.041Z] Node Version:  v25.2.1
+[debug] [2025-12-22T17:12:31.041Z] Time:          Mon Dec 22 2025 14:12:31 GMT-0300 (Brasilia Standard Time)
+[debug] [2025-12-22T17:12:31.041Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-12-22T17:12:31.844Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-22T17:12:31.844Z] > authorizing via signed-in user (rafael@pokasideia.lat)
+[debug] [2025-12-22T17:12:31.844Z] [iam] checking project gen-lang-client-0335555331 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-12-22T17:12:31.847Z] Checked if tokens are valid: false, expires at: 1766389655425
+[debug] [2025-12-22T17:12:31.847Z] Checked if tokens are valid: false, expires at: 1766389655425
+[debug] [2025-12-22T17:12:31.847Z] > refreshing access token with scopes: []
+[debug] [2025-12-22T17:12:31.848Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-22T17:12:31.848Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-22T17:12:32.064Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-22T17:12:32.064Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-22T17:12:32.087Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0335555331:testIamPermissions [none]
+[debug] [2025-12-22T17:12:32.087Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0335555331:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0335555331
+[debug] [2025-12-22T17:12:32.087Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0335555331:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-12-22T17:12:33.211Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0335555331:testIamPermissions 200
+[debug] [2025-12-22T17:12:33.211Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0335555331:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-12-22T17:12:33.212Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:33.212Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:33.212Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0335555331 [none]
+[debug] [2025-12-22T17:12:33.652Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0335555331 200
+[debug] [2025-12-22T17:12:33.652Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0335555331 {"projectId":"gen-lang-client-0335555331","projectNumber":"677638342514","displayName":"controlepi","name":"projects/gen-lang-client-0335555331","resources":{"hostingSite":"gen-lang-client-0335555331","realtimeDatabaseInstance":"gen-lang-client-0335555331-default-rtdb"},"state":"ACTIVE","etag":"1_faa588dc-1470-4cff-b6f8-c9d191bdf3b2"}
+[info] 
+[info] === Deploying to 'gen-lang-client-0335555331'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-12-22T17:12:33.655Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:33.655Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:33.655Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions [none]
+[debug] [2025-12-22T17:12:33.655Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-12-22T17:12:35.063Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions 200
+[debug] [2025-12-22T17:12:35.063Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions {"name":"projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[gen-lang-client-0335555331]: beginning deploy... 
+[info] i  hosting[gen-lang-client-0335555331]: found 3 files in dashboard 
+[debug] [2025-12-22T17:12:35.084Z] [hosting] uploading with 200 concurrency
+[debug] [2025-12-22T17:12:35.093Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.093Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.093Z] [hosting] hash cache [ZGFzaGJvYXJk] stored for 3 files
+[debug] [2025-12-22T17:12:35.094Z] [hosting][hash queue][FINAL] {"max":5,"min":3,"avg":3.6666666666666665,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":7}
+[debug] [2025-12-22T17:12:35.094Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb:populateFiles [none]
+[debug] [2025-12-22T17:12:35.094Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb:populateFiles {"files":{"/style.css":"96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9","/index.html":"2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb","/app.js":"51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06"}}
+[debug] [2025-12-22T17:12:35.310Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb:populateFiles 200
+[debug] [2025-12-22T17:12:35.310Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb:populateFiles {"uploadRequiredHashes":["51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06","96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9","2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files"}
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:35.311Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06 [none]
+[debug] [2025-12-22T17:12:35.311Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06 [stream]
+[debug] [2025-12-22T17:12:35.313Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9 [none]
+[debug] [2025-12-22T17:12:35.313Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9 [stream]
+[debug] [2025-12-22T17:12:35.314Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb [none]
+[debug] [2025-12-22T17:12:35.314Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb [stream]
+[debug] [2025-12-22T17:12:35.315Z] [hosting][populate queue][FINAL] {"max":219,"min":219,"avg":219,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":223}
+[debug] [2025-12-22T17:12:35.315Z] [hosting] uploads queued: 3
+[debug] [2025-12-22T17:12:36.810Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9 200
+[debug] [2025-12-22T17:12:36.810Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/96750b6cd6e6657211d573ed6a6e3dce078e31cd3019e17879b5ef3aa66255e9 [stream]
+[debug] [2025-12-22T17:12:37.065Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb 200
+[debug] [2025-12-22T17:12:37.065Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/2a9eba13d0a81786068dcc0655067f3da24163e2a94ab5f3f96fd43718bbdfdb [stream]
+[debug] [2025-12-22T17:12:37.434Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06 200
+[debug] [2025-12-22T17:12:37.434Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb/files/51b4d5c23c7657c5b1a9232a8e620742678dcf53af92ee1d38809c204d3fdb06 [stream]
+[debug] [2025-12-22T17:12:37.434Z] [hosting][upload queue][FINAL] {"max":2124,"min":1499,"avg":1792.3333333333333,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":2124}
+[info] ✔  hosting[gen-lang-client-0335555331]: file upload complete 
+[debug] [2025-12-22T17:12:37.436Z] [hosting] deploy completed after 2368ms
+[debug] [2025-12-22T17:12:37.436Z] [
+  {
+    "config": {
+      "public": "dashboard",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "gen-lang-client-0335555331"
+    },
+    "version": "projects/677638342514/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb"
+  }
+]
+[info] i  hosting[gen-lang-client-0335555331]: finalizing version... 
+[debug] [2025-12-22T17:12:37.437Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:37.437Z] Checked if tokens are valid: true, expires at: 1766427151064
+[debug] [2025-12-22T17:12:37.438Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb updateMask=status%2Cconfig
+[debug] [2025-12-22T17:12:37.438Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gen-lang-client-0335555331/versions/b78eba7bf42f71fb {"status":"FINALIZED","config":{}}

@@ -135,4 +135,27 @@ function simulateData() {
 }
 
 // Start
-document.addEventListener('DOMContentLoaded', initFirebase);
+document.addEventListener('DOMContentLoaded', () => {
+    initFirebase();
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('menuOverlay');
+
+    function toggleMenu() {
+        const isActive = sidebar.classList.contains('active');
+        if (isActive) {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        } else {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        }
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', toggleMenu);
+});

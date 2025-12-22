@@ -1,8 +1,8 @@
 const https = require('https');
 
 const data = JSON.stringify({
-  id_funcionario: "TESTE_SISTEMA",
-  status_uso: "Sucesso",
+  id_funcionario: "99 88 77",
+  status_uso: "Timeout",
   horario: new Date().toLocaleString()
 });
 
