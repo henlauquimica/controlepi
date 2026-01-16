@@ -2,14 +2,7 @@
 #include <MFRC522.h>
 #include <SPI.h>
 #include <WiFi.h>
-
-// --- Configurações de Rede e Firebase ---
-#define WIFI_SSID "SEU_WIFI_NOME"
-#define WIFI_PASSWORD "SUA_SENHA_WIFI"
-
-// --- Supabase ---
-#define SUPABASE_URL "https://inwskxdquwfhhryxpghh.supabase.co"
-#define SUPABASE_ANON_KEY "sb_publishable_gQTZhkfL1mcJtrVN_uuIrw_N6UJp82F"
+#include "config.h"
 
 // --- Definição de Pinos ---
 #define SS_PIN 21
